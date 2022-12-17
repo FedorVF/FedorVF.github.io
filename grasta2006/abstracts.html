@@ -1,0 +1,148 @@
+<html>
+<head>
+   <title> GRASTA 06 Abstracts
+</title>
+   </head>
+ <body text="#000000" bgcolor="#FFFFFF" link="#3333DD" vlink="#3333AA"
+alink="#0000FF">
+
+<p>
+<h1>GRASTA 2006 abstracts
+</h1> </p>
+<p>
+<!--<h2>October 9-13, 2006, Anogia Academic Village, Crete </h2> </p>-->
+
+<h3>Monday Oct. 9, 2006</h3>
+<ul>
+
+<li><A name="seymour"></A>09:15-10:00 Brian Alspach, <font color=FF0000> Cop and Robbers game </font </em> (Introductory Talk)
+            </li>
+<li><A name="dyer"></A>10:00-10:45 Danny Dyer, <font color=FF0000> Edge searching with restrictions
+</font </em> (Introductory Talk) 
+<p>We will examine the basic problem of edge searching, and some of the common restrictions: that searches be monotonic, connected, internal, or some combination of these three. We will examine the relationships between these restrictions, particularly inequalities that arise, and examples showing that these inequalities can be strict. We will also discuss some lower bounds that aided in the construction of these examples.    </p>         </li>
+<p>
+
+<li><A name="adler"></A>11:15-12:00 Isolde Adler,<em><font color=FF0000> Hypertree-width and marshal games</font </em> </em> (Introductory Talk)
+<p>
+It is well known that many NP-hard problems become polynomially solvable when restricted to instances whose underlying
+graphs have bounded tree-width. The notion of tree-width can easily be extended to hypergraphs by simply
+considering the tree-width of their primal graphs. But doing so implies a loss of information
+on the structure of the hypergraphs. For this reason, G. Gottlob, N. Leone and F. Scarcello 
+introduced the notion of hypertree-width.
+Bounded hypertree-width gives
+rise to larger classes of tractable instances of NP-hard problems.
+For instance, the class of all acyclic hypergraphs has 
+hypertree-width 1, while the tree-width is unbounded. 
+
+<p>
+One way to understand hypertree-width is via 
+the monotone robber and marshals game, a game similar to the (monotone) 
+robber and cops game characterising tree-width.
+I will give a short introduction to the theory of hypertree decompositions, with
+main focus on the game-theoretic characterisation of hypertree-width. 
+While the robber and cops game and its monotone variant coincide, this is not true for
+the robber and marshals game and its monotone variant. I will present a hypergraph witnessing this.
+Nevertheless, the two game variants do not differ much. 
+I will conclude with some recent results and open problems.
+</p>            </li>
+</ul>
+
+<h3>Tuesday Oct. 10, 2006</h3>
+<ul>
+
+<li><A name="krizanc"></A>09:00-09:25 Danny Krizanc, <font color=FF0000> Rendezvous Search and Related Problems </font </em>
+<p>
+In the rendezvous search problem two or more agents initially
+located a different nodes of a graph must devise
+strategies that allow them to meet at the same node. A number
+of variations on the problem have been considered depending
+upon the properties of the agents and of the underlying graphs.
+A short survey of recent results in this area will be given
+along with open problems.</p>
+</li>
+<li><A name="kreutzer"></A>09:25-09:50 Stephan Kreutzer, <font color=FF0000> Digraph Decompositions: DAG-Width, Kelly-Width, and Applications </font </em>
+<p>
+Following the tremendous success of undirected graph decompositions in
+graph structure theory as well as algorithm theory, decompositions of
+directed graphs have received growing attention in recent years.
+Following the introduction of directed tree-width by Reed and Johnson,
+Robertson, Seymour, and Thomas, various authors have proposed
+generalisations of notions such as tree-width or path-width from
+undirected to directed graphs.</p>
+<p>
+In this talk we will concentrate on two approaches to generalise
+tree-width to digraphs. The first is based on a translation of the
+standard cops-and-robber game for tree-width. This leads to the notion
+of DAG-width which was shown to have some interesting algorithmic
+applications. The second approach is based on translations of the inert
+cops-and-robber game, elimination orderings, and partial k-trees to
+digraphs. The three concepts are shown to be equivalent. This leads to
+the new notion of the Kelly-width of a digraph. We comment on
+algorithmic applications and relate the two types of decompositions to
+other known notions of digraph decompositions.</p>
+
+</li>
+<li><A name="barat"></A>09:50-10:15 Janos Barat, <em> <font color=FF0000> Searching directed graphs </font </em>
+<p>Let a directed graph $D$ be given. We consider the following cops- and-robber game:
+The robber stands on a vertex, and he can run at infinite speed
+to any other vertex along the directed edges in the indicated  direction.
+He is not permitted to run through a cop, however.
+The cops stand also on the vertices, and move by helicopters
+from vertex to vertex.
+We assume in this version, that the robber is invisible.
+The cops {\em capture} the robber, if a cop lands on a vertex, where
+the robber stands and can not move anywhere.
+That is, all out-neighbors are also occupied by cops.</p>
+<p>
+The goal is to decide how many cops are necessary to capture the  robber.
+We denote this minimum by $\overline{cn}(D)$.</p>
+<p>
+In a recent paper, we have proved the monotonicity of this game.
+We also believe that the directed path-width defined by Reed,  Seymour and Thomas is the same as $\overline{cn}(D)-1$. We could  only prove that these two values differ by at most one.</p>
+<p>
+We have tried to characterize the directed graphs, where two cops  are enough to capture the robber in the above game. To do so, we  introduced a relation called "bb-minor", which is an extension of  the "butterfly minor". It is worth mentioning, that we could not  find an infinite antichain of digraphs with respect to "bb-minor".</p>
+<p>
+We will bring up numerous open questions in connection with the  above cops-and-robber game.</p>
+</li>
+<li><A name="nisse"></A>10:15-10:40 Nicolas Nisse,<em> <font color=FF0000> Monotonicity of Non-deterministic Graph Searching</font </em> 
+<p>
+In graph searching, a team of searchers want to capture a fugitive
+ moving in a graph. Several variants of this game have been studied,
+ among which visible graph searching in which the searchers
+ permanently know the position of the fugitive, and invisible graph
+ searching in which the searchers are unaware of the position of the
+ fugitive. Strategies for which the part of the graph reachable by
+ the fugitive never grows are called monotone. Monotone
+ strategies may require more searchers than general strategies to
+ catch the fugitive. This is however not the case for visible and
+ invisible graph searching. Two important consequences of the
+ monotonicity of visible and invisible graph searching are: (1) the
+ decision problem corresponding to computing the minimum number of
+ searchers to clear the graph is in NP, and (2) computing minimal
+ search strategies is simplified by taking into account that there
+ exist some that never backtrack.</p>
+<p>
+ Fomin et al. (2005) introduce an important graph searching
+ game that unifies visible and invisible search games. It is called
+ non-deterministic graph searching. In this variant, searchers can
+ query an oracle that knows where the fugitive currently stands. The
+ question of monotonicity of non-deterministic graph searching is
+ however left open.</p>
+<p>
+ In this talk, we prove that non-deterministic graph searching is
+ monotone. In particular, this result is a unified proof of
+ monotonicity for visible and invisible graph searching. As a
+ consequence, the decision problem corresponding to the
+ non-determinisitic search game belongs to NP. Moreover, the exact
+ algorithms designed by Fomin et al. do compute minimal
+ non-deterministic search strategies.</p>
+
+</p>
+
+</li>
+</ul>
+<p>
+
+<p>
+<script>document.write("<FONT SIZE=1>Last modified by Fedor Fomin " + document.lastModified)</script>
+</body></html> 

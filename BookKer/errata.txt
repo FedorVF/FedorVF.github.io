@@ -1,0 +1,393 @@
+Sept 17 2021
+
+Errata to Fomin, Lokshtanov, Saurabh and Zehavi “Kernelization” book
+
+The page and statement numbers follows the final (printed) edition by Cambridge. 
+
+
+Many thanks to  Frieder Smolny, Satoshi Matsuoka, Julian Schnitzler, Naoyuki Kamiyama, 
+Tim Jackman, Steve Homer, Jungho Ahn, Danil Sagunov,  George Osipov, and Ruben van Niekerk  for reporting some of those!
+
+
+
+
+———————————————————
+- page xii, 8th line  mulivariate -> multivariate
+
+------------------------------------
+
+
+- page 5, 12th line. Reduction Rule Reduction Rule -> Reduction Rule
+
+——————————————
+
+- page 6, In the chess example, the knight moves to e7 instead of f7  
+
+------------------------------------
+
+ 
+- page 15p, 5th line.  graphs of girth 5 -> graphs of girth at least 5
+
+——————————————————
+
+
+
+- page 16, 19th line.  Vertex Cover, Feedback Arc Set in Tournaments, Vertex Cover, Feedback Arc Set in Tournaments (FAST) -> Vertex Cover, Feedback Arc Set in Tournaments (FAST)
+
+- page 16, 20th line.  graphs of girth 5 -> graphs of girth at least 5
+————————————————————
+
+
+- page 22 line 4 of Section 2.4 : "The Dominating Set problem it is known..." => "The
+Dominating Set problem is known..."
+
+—————————————
+ 
+- page 23, 10th line.  white vertex dominating more than $k$ black vertices -> white vertex dominating more than $k-|R|$ black vertices
+————————————————————
+
+- page 24: |B| <= k^2 should be |B| <= k(k+1), since one black vertex
+covers at most (k+1) black vertices (including itself). The bounds on
+W and R+W+B are also affected.
+————————————————————————
+
+
+- page 26: In most of reduction rules here, we can use "at least |S|"
+instead of "more than |S|"
+
+————————————
+ 
+- page 27, 6th line of the proof of Lemma 2.11) a vertex cover of size $\ell-1$. -> a vertex cover of size at most $\ell-1$.
+
+————————————————————
+ 
+- page 27, 11th line of the proof of Lemma 2.11) should belong to $C$. -> should belong to $C'$.
+
+———————
+
+
+- pages 29-30: Problem 2.8: Here  r is a constant that may be hidden by big-O.
+——————————
+- page 33, Section 3.1 2nd line.  "NonBlocker" => "Max Leaf Subtree"
+
+——————————————
+- page 36 line 4: "u and v become leaves": this is not true, since x or y may
+coincide with u or v. Here we have to argue that if x coincides with  u, then adding xy destroys at most one leaf. 
+————————————————————
+- page 37, 3rd line of Lemma 3.3. The number of subdivided edges is not at most $|L|$, but $|L|+|B|-1\leq 2|L| -3$. This propagates with applications of Lemma 3.3; for instance (3.3) in 44p, 5th line from the bottom of 44p, and 3rd line from the bottom of 46p.
+
+————————————————————————
+- page 43: FVS.4 "delete it v" => "delete v"
+
+————————————————————————
+
+- page 43: FVS.5 "none-isolated" => "non-isolated"
+——————————————
+- page 43 line 20  "G'-S contain" => "G'-S contains"
+
+———————————————————— 
+- page 43. Before reduction FVS.5 we need one more reduction rule. Without it rule FVS.5 is not safe.
+
+Lemma: Let v be in T1, and suppose its neighborhood in F is a double edge clique C. Then there exists an optimal FVS S in G that avoids v.
+
+Proof: Let S be an optimal FVS of G. If v \notin S we are done. If v is in S, observe that there is at most one vertex x of C that is is not in S. Let S’ = (S-{v}) \cup C, we have that |S’| \leq |S|. We claim that S’ is an FVS. Indeed v has degree at most one in G-S’ and so there are no cycles in G-S’ containing v. Cycles in G-S’ avoiding v also avoid S, contradicting that S is an FVS. 
+
+Corollary: Let v in T1 and c be any vertex in C adjacent to v by a double edge. There exists an optimal FVS of G containing c.
+Pf: take one that avoids v, it contains c. 
+
+This leads to an extra Reduction Rule FVS.4B: if v is in T1 and its neighborhood is a double Edge Clique C, and v is adjacent to c in C by a double Edge, then remove c and reduce the parameter k by 1.
+
+
+Assuming this rule is applied exhaustively v is not incident to any double edges and the rule may now be applied 
+
+
+Proof of Claim 3.12. (Opposite direction.) 
+
+
+Let v be the vertex of degree 1 in T whose neighborhood in T is a double edge clique. Let u be its neighbor in T. Let w be the vertex resulting from the contraction. We want to prove that if G/uv has a FVS S' of size at most k then G has a FVS of size at most k.
+Let S' be an FVS of G/uv.
+
+Case 1: S' does not contain w. Then S' is a vertex set in G, and we claim that S' is a FVS in G. We have that (G-S') / uv = (G/uv) - S'. So (G-S') / uv is acyclic.  Contracting an edge (when keeping double edges) can not turn a cyclic graph into acyclic, thus  G-S' is acyclic as well.
+
+Case 2: S' contains w. Let S = (S' - {w})\cup {u}. We claim that S is a FVS of G. Suppose not, and let Q be a cycle in G - S.  We have that G-S = (G-S’) \cup v. So G-S is an acyclic graph (namely G-S’) plus one vertex v. So Q must go through v. Because of the reduction rule FVS4.a, there are no double edges connecting v with vertices of C. Thus the neighbors of v in Q are two different vertices. 
+But (since u is in S), both neighbors of v in Q are both in C, contradicting that Q is an induced cycle (since these two neighbors are connected by a double edge in C and thus form a cycle in G and in G'). This is a contradiction. 
+
+
+——————————————————
+- page 45 line 11: "To follows our strategy" => "To follow our strategy"
+
+------------------------------------
+
+- page 45: FVS.6 "delete v" => "delete f"
+
+———————————
+
+-page 46 line 18.  … which endpoints -> whose endpoints
+
+——————————————————
+
+- page 46: Proof of Claim 3.15. “is almost identical to the proof of Claim 3.15”-> Lemma 2.11?
+
+———————
+
+
+- page 46, 7th line from the bottom.  Dince the number of pairs is bounded by $k(k+1)(2k-1)$, then the  bound $|T_2|$, $2k(k+1)(2k-1)$ is correct. This propagates to the last two formulas on page 46. 
+
+—————————
+
+- page 47: Problem 3.3: This problem is very easy since every graph
+without isolated vertices has a dominating set of size at most n/2, so
+simple kernel with 2k vertices follows. More interesting questions is a  5/3k kerenel, from  the
+original paper.
+—————
+
+ 
+- page  57, 4th line of Section 4.4. contains a cycle on $\ell$ vertices. -> contains a cycle on at least $\ell$ vertices.
+
+------------------------------------
+ 
+- page 58, 2nd line of Problem 4.1. graph $G$ -> a graph $G$
+
+------------------------------------
+ 
+- page  63, 9th line. from the bottom) $|B|\geq|A|$. -> $|B|\geq q|A|$.
+
+------------------------------------
+
+- page 63, 2nd line of the proof of Lemma 5.2 "Next, suppose that that..." => "Next, suppose that..."
+------------------------------
+- page 72: in Reduction COC.2: "If |B| >=" => "If w(B) >="
+
+-------------------------------
+ 
+- page  73, 11th line. size at least $\ell$. -> size at least $\ell+1$.
+
+------------------------------------
+
+- page 73: missing qed in the end of the proof of the claim
+-------------------------------
+
+
+------------------------------------
+- page 76, 7th line. allowsus -> allow us
+ 
+------------------------------------
+
+- page 77, in (v): "to the the subtree" => "to the subtree"
+
+----------------------------
+
+- page 79 3rd line: "by more that" => "by more than"
+
+----------------------------
+
+- page 80 item 3 of Reduction FVS12: "Add edges between v and vertices in S such that..." => "Add
+edges between v and vertices in S in such a way that..."
+
+----------------------------
+
+- page 81 line 14: "such a feedback vertex set the set..." => "such a feedback
+vertex set..."
+
+----------------------------
+
+
+
+- page 82: For Problem 5.7 a quadratic kernel is easily obtained with
+simpler techniques. It is better to ask here for a linear kernel.
+--------------------------
+- page 91, 10th line of the proof of Theorem 6.5.  Conversely, let $S$ be a minimal vertex cover of size $k$. -> Conversely, let $S$ be a minimal vertex cover of size at most $k$.
+ 
+------------------------------------
+- page 97, 9th line from the bottom. not exist a (resp. strictly) reducible pair -> not exist a (resp. strictly) f-reducible pair
+ 
+------------------------------------
+- page 100, 11th line from the bottom. $f$-reducible -> f-reducible
+ 
+------------------------------------
+- page 112, 2nd line. $|N_G(A)|\leq|A|$ -> $|N_{G_{mathcal{P}}(A)|\leq|A|$.
+------------------------------------
+
+- page  112, 3rd line. Define $Y$ as $\delta(\mathcal{P})\setminus A$, instead of $\delta(\mathcal{P})\setminus\{e|e\in A\}$.
+  
+------------------------------------
+ 
+- page 112, 4th line the sets of $H$ -> the subsets of $V(H)$
+ 
+
+
+------------------------------------
+- page 112, 5th line Consider the following partition of $H$, -> Consider the following partition of $V(H)$,
+ 
+------------------------------------
+
+
+ 
+
+
+
+ - page 113, 12th line flopping -> flipping
+ 
+------------------------------------
+- page 113, 6th line from the bottom $H$ is a hypertree -> $H$ has a hypertree
+
+------------------------------------ 
+- page 115, Reduction IST.1 Otherwise, proceed to Rule IST.3. -> Otherwise, proceed to Rule IST.2.
+ 
+------------------------------------
+- page 117, Theorem 7.13 ISTadmits -> IST admits
+ 
+------------------------------------
+- page 121, 3rd line a an area -> an area
+ 
+------------------------------------
+- page 124, 11th line from the bottom Reduction Rule 8.4 -> Reduction Rule SP.1
+
+------------------------------------ 
+- page 128, 9th line from the botton $\leq=$ -> $\leq$
+ 
+------------------------------------
+- page 129, 3rd line of the proof of Lemma 8.6) Between -> Because
+
+------------------------------------ 
+- page 129, 5th line of the proof of Lemma 8.6 $|F(X)|\leq j$. -> $|F(X)|<j$.
+ 
+------------------------------------
+- page 130, 8th line of the proof of Claim 8.8 $|N(w)\cap I|<ik^{i-p-1}$ -> $|N(w)\cap I|<ik^{j-p-1}$
+
+------------------------------------ 
+- page 131, 3rd line $I=\bigcap_{x\in S}N(u_x)$, -> $I=\bigcap_{u_x\in S}N(u_x)$,
+ 
+------------------------------------
+- page 131, 17th line Theorem 8.6 -> Lemma 8.6
+ 
+------------------------------------
+- page 136, 2nd line from the bottom in the proof Lemma 9.5 -> in the proof of Lemma 9.5
+
+------------------------------------
+ 
+- page  140, 13th line. "than one unaffected clique" -> "than one unaffected maximal clique."
+
+------------------------------------
+- page 141, Figure 9.3.  both incident to $K_1$ and $K_2$ -> both incident to $K_1$ or $K_2$.
+------------------------------------
+- page  142, 11th line from the bottom)   Observation 9.3 -> Lemma 9.10
+
+
+------------------------------------
+- page   148p, 18th line.  "all its children are either leaves or labeld by" -> "each of its children either is a leaf or is labeled by."
+------------------------------------
+- page  150, Lemma 9.22.  Let $G$ be graph -> Let $G$ be a graph
+
+------------------------------------
+ 
+- page   154, 5th line of the proof of Lemma 9.28."that do not have both endpoints in $M$" -> “that neither of its ends are in $M$."
+(*235p, 7th line) What is $\tilde{O}$?
+------------------------------------
+
+
+- page 169, 6th line. ... if it forms a spanning forest in ... ->... if it forms a   forest in ...
+------------------------------------
+
+
+- page 235, 7th line.  $x,k\tilde{O}$ -> $(x,k’)$.
+------------------------------------
+- page 239. The title of section 13.2.1. Should be Planar Connected Vertex Cover (not Planar Cluster Vertex Deletion)
+------------------------------------
+- page 159, 4th line.  ket -> let
+ ------------------------------------
+- page 222, inequality in 10th line, $\geq|T''|+k$ -> $\geq|\mathcal{T}''+k$
+ ------------------------------------
+- page 234, 8th line. least $2k$ -> least $2k'$
+ ------------------------------------
+- page 234, 16th line. $\geq2k$ -> $\geq2k'$
+
+------------------------------------
+- page 237, Theorem 13.1.  Then? -> Then
+
+------------------------------------
+- page 240_7 Let $C$ be a *connected* vertex cover...
+
+
+------------------------------------
+- page 241^1 Instead of $|N_2|\leq k$ should be $|N_2|=0$. 
+
+------------------------------------
+
+- page  260 line 19:     a \in \chi(\partial_T(B))  should be  u \in \chi(\partial_T(B))
+
+------------------------------------ 
+- page  263, 4th line of Lemma 14.18 and 7th line of the proof of Lemma 14.18: $\chi(b')=\chi(b)$. -> $\chi'(b')=\chi(b)$.
+ ------------------------------------
+- page  264, 11th line from the bottom. $\chi:V(T)\rightarrow V(G)$ -> $\chi:V(T)\rightarrow 2^{V(G)}$
+-----------------------------------
+
+ 
+- page  267, the middle equation. Two $\setminus$ between $\chi$ functions are missed.
+
+-----------------------------------
+- page  272, 19th line. $OPT_2=(OPT\setminus V_{b_1})\cup X_2$ ->
+ $OPT_2=(OPT_1\setminus V_{b_2})\cup X_2$.
+-----------------------------------
+ 
+- page   273, Lemma 14.33.  $k$ is the width of the tree decomposition.
+———————————
+
+- page   291, Theorem 14.56. Robertson et al. et al. -> Robertson et al.
+----------------------------------- 
+- page  291, Theorem 14.56.  For any $G$ excluding $H$ as a minor -> For any $G$ excluding a planar $H$ as a minor
+
+-----------------------------------
+
+
+- page   292 Theorem 14.58. If $G$ is planar -> If $G$ is a connected planar graph. 
+
+-----------------------------------
+
+- page 307. line 5 of the proof of Lemma 15.13. 
+$G[\chi(T_{v_i} - M_{i-1})]$  should be $G[\chi(T_{v_i}) \setminus \chi(M_{i-1})]$
+Similar corrections for 
+      line 7 $G[\chi(T - M_i)]$ -> $G[\chi(T)\setminus  \chi(M_i)]$
+and 
+line 15  
+$G[\chi(T_{v_j} - M_{j-1})]$  should be $G[\chi(T_{v_j}) \setminus \chi(M_{j-1})]$
+
+
+
+-------------------------------------
+- pages  310-312 All \hat symbols over  $T_a$ $\chi$ like in $(\hat{T_a},\hat{\chi_a})$ should be removed. 
+-------------------------------------
+
+
+ 
+- page  313, Theorem 15.22) Dominating Set (vc) on planar graphs -> Dominating Set on planar graphs.  "
+ 
+
+————————
+
+- page  315, 4th line. Set admits $2^{o(n)}$ time algorithm -> Set admits no $2^{o(n)}$ time algorithm
+-------------------------------------
+
+- page   328, 2nd line.  linear linear -> linear
+-------------------------------------
+
+- page 371, last line: Should be “All but one of its vertices are in S.” 
+------------------------------------
+
+
+- page 437, 14th line from the bottom. is the restriction of $\Gamma^-_{t,d}$ -> is the restriction of $\Gamma_{t,d}$.
+ ------------------------------------
+- page 438, 4th line, it suffices to given -> it suffices to give
+------------------------------------
+- page 440, line 13: “no more hold” should be “no longer hold”. 
+------------------------------------
+- page 440, line 14: “setup” should be “set up”.
+------------------------------------
+ 
+- page 441 19th line. instance (I,k) In this chapter -> instance (I,k). In this chapter
+ ------------------------------------
+- page 454, Definition 23.17. (fEfficient PSAKS) -> (Efficient PSAKS)
+ ------------------------------------
+- page 481, Question of Multicolored Biclique. $1\leq i\leq\ell$ -> $1\leq i\leq k$
+
+

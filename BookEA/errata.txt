@@ -1,0 +1,35 @@
+Dec 23 2021
+
+Fomin and Kratsch "Exact Algorithms" book
+List of typos, mistakes and comments. 
+
+Many thanks to Matthias Mnich, Evgeny Demenkov, Don Knuth, Laszlo Kozma, Van Bang Le,  Taichi Shiitada, Torstein Strømme, and Michal Tuczynski  for reporting some of those!
+
+
+ p. 15, paragraph 3: "able determine" --> "able to determine"
+ p. 17, paragraph 7: "2 A table" --> "A table"
+p.21 3rd line, should be 
+\[x^{q}=x^{q-1}+x^{q-2} +\cdots + x+1\]
+p.35 (3.2) : \sum_{i=1}^{n} \binom{n}{i} 2^n  -->  \sum_{i=0}^{n} \binom{n}{i} 2^n
+p.35 (3.3) : \sum_{i=1}^{n} \binom{n}{i} 3^{i/3}  -->  \sum_{i=0}^{n} \binom{n}{i} 3^{i/3}
+p.39, Lemma 3.12 \alpha should be at most 1/2 
+p. 39, the end-of-proof box should go to the preceding page using the Latex command \qedhere inside the formula
+p. 71, line 2, the comma should go to preceding line
+p.82 Lemma 5.8, should be $pw(T)\leq log_3{n}+1$
+p. 96, Lemma 5.28: items (ii) and (iii) are not printed so cleanly
+p. 106, last paragraph:  "If in this case we branch on two subproblems, and thus either add v to the forest,”, delete space before comma
+p. 110 Fig. 6.3 In the graph resulting after compression the new vertex is u, not v
+p. 138, last line "Knuths's" --> "Knuth's"
+p. 114, last paragraph: uncompiled reference "indexalgorithm!msc"
+p. 142, proof of Lemma 8.1: "distance from a* to the" --> "distance from a^* to the"
+p.154 Algorithm 2-table can be extended to produce all pairs in the same time bound only when there is strict inequality of the table entries. With equalities, we might have $k^2$ outputs, and the updating of
+$i$ and $j$ after each output is not so trivial.
+p.157 The description of the algorithm for Knapsack is ambiguous due to the following   sentence: 
+Thus after preprocessing done for X and Y, we have that (Ai, Wi) in X and (Aj, Wj) in Y have maximum sum subject to Wi + Wj <= W if and only if the sum Wi + Wj is maximum subject to Wi + Wj <= W.
+Better explanation is: 
+Thus after preprocessing done for X and Y, we have that for every  pair (A_i, W_i) in X, the pair   (A_j, W_j) in Y obtains maximum sum A_i +A_j subject to W_i + W_j <= W if and only if W_j is the maximum subject to  Wi + Wj <= W.
+p.164 line 8. we are quarantined -> we are guaranteed
+p.182 Lemma 11.9, \ell \in N should be \ell \in \mathbb{N}
+p.182 line 3 from the bottom.  "... and at most n·g(\ell') clauses." 
+should be "... and each F_i has at most n·g(\ell') clauses." 
+
